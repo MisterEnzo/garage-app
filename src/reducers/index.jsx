@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import garage from './garage_reducer';
 import cars from './car_reducer';
 
-const rootReducer = CombineReducers({
+const rootReducer = combineReducers({
   garage,
   cars
 });
