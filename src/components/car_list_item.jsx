@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CarListItem = (props) => {
+const CarListItem = ({car}) => {
   return(
     <div>
-      <h3>Car</h3>
-      <p>Owner</p>
-      <p>Model</p>
+      <h3>{car.brand} - {car.brand}</h3>
+      <p>{car.owner}</p>
+      <p>{car.plate}</p>
     </div>
   )
 };
