@@ -1,8 +1,8 @@
 import * as types from './action_types';
 
-export function fetchCars() {
+export function fetchCars(garage = "enzos") {
   return (
-    fetch('https://wagon-garage-api.herokuapp.com/my-awesome-garage/cars')
+    fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars`)
       .then((response) => {
         return response.json();
       })
@@ -11,4 +11,12 @@ export function fetchCars() {
         return {type: types.FETCH_CARS, payload: data};
       })
   )
+}
+
+export function addCar(garage, car) {
+  fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(car)
+  })
 }
