@@ -17,7 +17,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={App} />
-        <Route path="/enzos/:car" component={Car} />
+        <Route path="/enzos/cars/:id" component={Car} />
       </Switch>
     </Router>
   </Provider>,
