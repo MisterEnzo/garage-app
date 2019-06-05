@@ -5,6 +5,11 @@ export default function carReducer(state = initialState.cars, action) {
   switch (action.type){
     case (types.FETCH_CARS):
       return action.payload;
+    case (types.ADD_CAR):
+      return [
+        ...state,
+        Object.assign({}, action.payload)
+      ];
     default:
       return state;
   }

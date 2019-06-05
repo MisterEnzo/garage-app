@@ -18,5 +18,10 @@ export function addCar(garage, car) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(car)
+  }).then((response) => {
+    return response.json();
+  }).then((data) => {
+    console.log(data);
+    return data;
   })
 }
