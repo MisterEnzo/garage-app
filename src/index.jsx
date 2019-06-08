@@ -7,6 +7,7 @@ import configureStore from './store/configure_store';
 
 import App from './components/app';
 import CarShow from './containers/car_show';
+import CarNew from './containers/car_new';
 
 import '../assets/stylesheets/application.scss';
 
@@ -17,6 +18,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={App} />
+        <Route path="/enzos/cars/new" exact component={CarNew} />
         <Route path="/enzos/cars/:id" component={CarShow} />
       </Switch>
     </Router>

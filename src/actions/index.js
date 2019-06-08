@@ -34,6 +34,6 @@ export function addCar(garage, car) {
     return response.json();
   }).then((data) => {
     console.log(data);
-    return data;
+    return {type: types.ADD_CAR, payload: data};
   })
 }
