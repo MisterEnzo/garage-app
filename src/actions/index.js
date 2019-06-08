@@ -13,6 +13,18 @@ export function fetchCars(garage = "enzos") {
   )
 }
 
+export function fetchCar(id){
+  return (
+    fetch(`https://wagon-garage-api.herokuapp.com/cars/${id}`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        return {type: types.FETCH_CAR, payload: data};
+      })
+  )
+}
+
 export function addCar(garage, car) {
   fetch(`https://wagon-garage-api.herokuapp.com/${garage}/cars`, {
     method: 'POST',

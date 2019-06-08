@@ -6,7 +6,7 @@ import { createHistory as history } from 'history';
 import configureStore from './store/configure_store';
 
 import App from './components/app';
-import Car from './containers/car';
+import CarShow from './containers/car_show';
 
 import '../assets/stylesheets/application.scss';
 
@@ -17,7 +17,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={App} />
-        <Route path="/enzos/cars/:id" component={Car} />
+        <Route path="/enzos/cars/:id" component={CarShow} />
       </Switch>
     </Router>
   </Provider>,
