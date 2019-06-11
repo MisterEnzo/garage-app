@@ -34,6 +34,6 @@ export function addCar(car, callback) {
     return response.json();
   }).then((data) => {
     callback();
-    return {type: types.ADD_CAR, payload: data};
+    // return {type: types.ADD_CAR, payload: data};
   })
 }
