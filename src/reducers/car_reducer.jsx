@@ -10,7 +10,6 @@ export default function carReducer(state = initialState.cars, action) {
     case (types.ADD_CAR):
       return [
         ...state,
-        Object.assign({}, action.payload)
       ];
     default:
       return state;

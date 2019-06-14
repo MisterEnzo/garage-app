@@ -17,7 +17,6 @@ class CarNew extends Component {
   onSubmit = (values) =>{
     this.props.addCar(values, (post) => {
       this.props.history.push('/');
-      return post;
     })
   }
 
@@ -25,7 +24,7 @@ class CarNew extends Component {
     return(
       <div>
         <h1>Register a Car</h1>
-        <form onSubmit={(values) => console.log(values)}>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
             <div>
               <label htmlFor="brand">Brand</label>
               <Field name="brand" component={this.renderInput} />
@@ -53,26 +52,3 @@ class CarNew extends Component {
 export default reduxForm({ form: 'newCarForm' })(
   connect(null, { addCar })(CarNew)
 );
-// export default CarNew;
-
-// <form >
-//   <div>
-//     <label for="brand">Brand:</label>
-//     <input type="text" name="brand" id="brand" />
-//   </div>
-//   <div>
-//     <label for="model">Model:</label>
-//     <input type="text" name="model" id="model"/>
-//   </div>
-//   <div>
-//     <label for="owner">Owner:</label>
-//     <input type="text" name="owner" id="owner"/>
-//   </div>
-//   <div>
-//     <label for="plate">Plate:</label>
-//     <input type="text" name="plate" id="plate"/>
-//   </div>
-//   <div>
-//     <input type="submit" value="Submit" />
-//   </div>
-// </form>

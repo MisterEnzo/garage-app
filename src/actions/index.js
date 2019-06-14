@@ -26,14 +26,15 @@ export function fetchCar(id){
 }
 
 export function addCar(car, callback) {
-  fetch(`https://wagon-garage-api.herokuapp.com/enzos/cars`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(car)
-  }).then((response) => {
-    return response.json();
-  }).then((data) => {
-    callback();
-    // return {type: types.ADD_CAR, payload: data};
-  })
+  return (fetch(`https://wagon-garage-api.herokuapp.com/enzos/cars`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(car)
+    }).then((response) => {
+      return response.json();
+    }).then((data) => {
+      callback();
+      return {type: types.ADD_CAR, payload: data};
+    })
+  )
 }
