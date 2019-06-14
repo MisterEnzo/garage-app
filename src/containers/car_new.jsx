@@ -5,6 +5,15 @@ import { connect } from 'react-redux';
 import { addCar } from '../actions/index';
 
 class CarNew extends Component {
+  renderInput({ input, label}){
+    return(
+      <div>
+        <label>{label}</label>
+        <input {...input}></input>
+      </div>
+    )
+  }
+
   onSubmit = (values) =>{
     this.props.addCar(values, (post) => {
       this.props.history.push('/');
@@ -16,22 +25,22 @@ class CarNew extends Component {
     return(
       <div>
         <h1>Register a Car</h1>
-        <form onSubmit={(values) => this.props.addCar(values, () => console.log(car))}>
+        <form onSubmit={(values) => console.log(values)}>
             <div>
               <label htmlFor="brand">Brand</label>
-              <Field name="brand" component="input" type="text" />
+              <Field name="brand" component={this.renderInput} />
             </div>
             <div>
               <label htmlFor="model">Model</label>
-              <Field name="model" component="input" type="text" />
+              <Field name="model" component={this.renderInput} />
             </div>
             <div>
               <label htmlFor="plate">Plate</label>
-              <Field name="plate" component="input" type="text" />
+              <Field name="plate" component={this.renderInput} />
             </div>
             <div>
               <label htmlFor="owner">Owner</label>
-              <Field name="owner" component="input" type="text" />
+              <Field name="owner" component={this.renderInput} />
             </div>
             <button type="submit">Submit</button>
         </form>
