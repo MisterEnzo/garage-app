@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { addCar } from '../actions/index';
 
@@ -54,7 +55,9 @@ class CarNew extends Component {
             </div>
             <button type="submit">Submit</button>
         </form>
-
+        <Link to='/enzos/cars'>
+          <p>Back to Index</p>
+        </Link>
       </div>
     )
   }

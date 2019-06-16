@@ -24,7 +24,7 @@ class CarShow extends Component {
         <p>Model: {this.props.car.model}</p>
         <p>Owner: {this.props.car.owner}</p>
         <p>Plate: {this.props.car.plate}</p>
-        <Link to='/'>
+        <Link to='/enzos/cars'>
           <p>Back to Index</p>
         </Link>
       </div>
