@@ -18,12 +18,12 @@ class CarShow extends Component {
     }
 
     return(
-      <div>
-        <h1>Car Show</h1>
-        <p>Brand: {this.props.car.brand}</p>
-        <p>Model: {this.props.car.model}</p>
-        <p>Owner: {this.props.car.owner}</p>
-        <p>Plate: {this.props.car.plate}</p>
+      <div className="ui list">
+        <h1 className="item">Car Show</h1>
+        <p className="item">Brand: {this.props.car.brand}</p>
+        <p className="item">Model: {this.props.car.model}</p>
+        <p className="item">Owner: {this.props.car.owner}</p>
+        <p className="item">Plate: {this.props.car.plate}</p>
         <Link to='/enzos/cars'>
           <p>Back to Index</p>
         </Link>
