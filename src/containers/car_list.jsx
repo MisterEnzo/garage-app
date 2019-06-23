@@ -16,10 +16,10 @@ class CarList extends Component {
     return(
       <div className="ui ten wide column">
         <h2>Cars:</h2>
-        <div className="ui list" >
+        <div className="ui items" >
           {this.props.cars.map((car) => {
             return(
-              <Link to={`/cars/${car.id}`} key={car.id} >
+              <Link className="item" to={`/cars/${car.id}`} key={car.id} >
                 <CarListItem car={car} />
               </Link>
             )
