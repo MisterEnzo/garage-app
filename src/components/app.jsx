@@ -5,10 +5,14 @@ import CarList from '../containers/car_list';
 class App extends Component {
   render() {
     return(
-      <div>
-        <h1>Garage App</h1>
-        <Garage />
-        <CarList />
+      <div className="ui container">
+        <div className="ui header">
+          <h1 >Garage App</h1>
+        </div>
+        <div className="ui container grid">
+          <Garage />
+          <CarList />
+        </div>
       </div>
     )
   }

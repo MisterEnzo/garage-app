@@ -18,13 +18,13 @@ class CarShow extends Component {
     }
 
     return(
-      <div className="ui list">
+      <div className="ui container list">
         <h1 className="item">Car Show</h1>
         <p className="item">Brand: {this.props.car.brand}</p>
         <p className="item">Model: {this.props.car.model}</p>
         <p className="item">Owner: {this.props.car.owner}</p>
         <p className="item">Plate: {this.props.car.plate}</p>
-        <Link to='/enzos/cars'>
+        <Link to='/cars'>
           <p>Back to Index</p>
         </Link>
       </div>

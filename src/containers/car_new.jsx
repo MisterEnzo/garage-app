@@ -28,13 +28,13 @@ class CarNew extends Component {
 
   onSubmit = (values) =>{
     this.props.addCar(values, (post) => {
-      this.props.history.push('/enzos/cars');
+      this.props.history.push('/cars');
     })
   }
 
   render () {
     return(
-      <div>
+      <div className="ui container">
         <h1>Register a Car</h1>
         <form onSubmit={this.props.handleSubmit(this.onSubmit)} className="ui form">
             <div className="field">
@@ -55,7 +55,7 @@ class CarNew extends Component {
             </div>
             <button type="submit" className="ui button">Submit</button>
         </form>
-        <Link to='/enzos/cars'>
+        <Link to='/cars'>
           <p>Back to Index</p>
         </Link>
       </div>

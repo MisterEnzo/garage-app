@@ -16,10 +16,10 @@ const store = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-        <Route path="/enzos/cars" exact component={App} />
-        <Redirect from="/" to="/enzos/cars" />
-        <Route path="/enzos/cars/new" exact component={CarNew} />
-        <Route path="/enzos/cars/:id" component={CarShow} />
+        <Route path="/cars" exact component={App} />
+        <Redirect from="/" to="/cars" />
+        <Route path="/cars/new" exact component={CarNew} />
+        <Route path="/cars/:id" component={CarShow} />
     </Router>
   </Provider>,
   document.getElementById('root')

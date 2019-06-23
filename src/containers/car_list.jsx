@@ -14,20 +14,20 @@ class CarList extends Component {
 
   render() {
     return(
-      <div className="ui container">
-        <h2>Car List</h2>
-        <Link to="/enzos/cars/new">
-          <p>Add Car</p>
-        </Link>
+      <div className="ui ten wide column">
+        <h2>Cars:</h2>
         <div className="ui list" >
           {this.props.cars.map((car) => {
             return(
-              <Link to={`/enzos/cars/${car.id}`} key={car.id} >
+              <Link to={`/cars/${car.id}`} key={car.id} >
                 <CarListItem car={car} />
               </Link>
             )
           })}
         </div>
+        <Link to="/cars/new">
+          <p>Add Car</p>
+        </Link>
       </div>
     )
   }
