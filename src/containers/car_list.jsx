@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CarListItem from '../components/car_list_item';
+import PropTypes from 'prop-types';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -20,7 +21,7 @@ class CarList extends Component {
           {this.props.cars.map((car) => {
             return(
               <Link className="item" to={`/cars/${car.id}`} key={car.id} >
-                <CarListItem car={car} />
+                <CarListItem car={car} key={car.id} />
               </Link>
             )
           })}
@@ -31,6 +32,11 @@ class CarList extends Component {
       </div>
     )
   }
+}
+
+CarList.propTypes = {
+  cars: PropTypes.array.isRequired,
+  fetchCars: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state){

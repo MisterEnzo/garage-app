@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import { fetchCar } from '../actions/index';
 
@@ -32,11 +33,13 @@ class CarShow extends Component {
   }
 }
 
+CarShow.propTypes = {
+  car: PropTypes.object.isRequired
+}
+
 function mapStateToProps(state, ownProps) {
   const idFromUrl = parseInt(ownProps.match.params.id, 10);
   const car = state.cars.find(car => car.id === idFromUrl);
-  console.log(car);
-  console.log(state.cars);
   return { car };
 }
 
@@ -46,5 +49,7 @@ function mapDispatchToProps(dispatch){
     dispatch
   )
 }
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(CarShow);
